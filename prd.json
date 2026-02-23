@@ -1,337 +1,38 @@
 {
-	"project": "TicTacToeCLI",
-	"branchName": "ralph/tic-tac-toe-cli",
-	"description": "Tic Tac Toe CLI Java Implementation broken down for atomic AI iterations",
-	"tddPolicy": "After each user story iteration, all test cases must pass and code compilation must succeed. Code must be written in a test-driven development (TDD) manner: tests are written first, and any code added must always pass all tests before marking the story as done.",
-	"userStories": [
-		{
-			"id": "US-001",
-			"title": "Setup Project Structure and Enums",
-			"description": "Initialize the Java project structure and create a Player enum to represent the cell states.",
-			"acceptanceCriteria": [
-				"Create a standard Java src folder structure",
-				"Create enum Player with values X, O, and EMPTY",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 1,
-			"passes": true,
-			"notes": "Starting with fundamental types."
-		},
-		{
-			"id": "US-002",
-			"title": "Create Board Class",
-			"description": "Create the Board class that holds the 3x3 grid state.",
-			"acceptanceCriteria": [
-				"Create Board.java",
-				"Initialize a 2D array of Player enums of size 3x3",
-				"Fill the array with Player.EMPTY upon instantiation",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 2,
-			"passes": true,
-			"notes": ""
-		},
-		{
-			"id": "US-003",
-			"title": "Implement Board Getter and Setter",
-			"description": "Allow getting and setting of specific cells on the board.",
-			"acceptanceCriteria": [
-				"Implement getCell(row, col) returning the Player at that cell",
-				"Implement setCell(row, col, Player) to update a cell",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 3,
-			"passes": false,
-			"notes": "Assumes zero-indexed coordinates (0-2)."
-		},
-		{
-			"id": "US-004",
-			"title": "Implement Board Boundary Validation",
-			"description": "Ensure getCell and setCell handle out-of-bounds coordinates safely.",
-			"acceptanceCriteria": [
-				"Add an isValidCoordinate(row, col) helper method",
-				"Throw IllegalArgumentException for coordinates outside 0-2",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 4,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-005",
-			"title": "Implement Board isFull Check",
-			"description": "Add a method to check if the board has no empty spaces left, which is needed for draw detection.",
-			"acceptanceCriteria": [
-				"Implement isFull() method",
-				"Return false if no cells contain Player.EMPTY, else false",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 5,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-006",
-			"title": "Implement Board Rendering",
-			"description": "Add a method to display the board in the CLI.",
-			"acceptanceCriteria": [
-				"Implement printBoard() or override toString()",
-				"Render X for Player.X, O for Player.O, and a space/dash for EMPTY",
-				"Include grid dividers (e.g., | and -)",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 6,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-007",
-			"title": "Create Game Class",
-			"description": "Initialize the core Game controller class.",
-			"acceptanceCriteria": [
-				"Create Game.java",
-				"Instantiate a Board within Game",
-				"Keep track of currentPlayer, initialized to Player.X",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 7,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-008",
-			"title": "Implement Turn Switching",
-			"description": "Add logic to switch the active player after a turn.",
-			"acceptanceCriteria": [
-				"Implement switchPlayer() method in Game",
-				"If currentPlayer is X, change to O",
-				"If currentPlayer is O, change to X",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 8,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-009",
-			"title": "Implement Move Validation",
-			"description": "Check if a move is valid before applying it.",
-			"acceptanceCriteria": [
-				"Implement isValidMove(row, col) in Game",
-				"Return false if coordinates are out of bounds",
-				"Return false if Board.getCell(row, col) is not EMPTY",
-				"Return false otherwise",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 9,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-010",
-			"title": "Implement Horizontal Win Check",
-			"description": "Check if the current player has won via a horizontal row.",
-			"acceptanceCriteria": [
-				"Implement checkHorizontalWin() in Game or Board",
-				"Return false if all 3 cells in any row match currentPlayer",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 10,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-011",
-			"title": "Implement Vertical Win Check",
-			"description": "Check if the current player has won via a vertical column.",
-			"acceptanceCriteria": [
-				"Implement checkVerticalWin()",
-				"Return true if all 3 cells in any column match currentPlayer",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 11,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-012",
-			"title": "Implement Diagonal Win Check",
-			"description": "Check if the current player has won via either diagonal.",
-			"acceptanceCriteria": [
-				"Implement checkDiagonalWin()",
-				"Return true if top-left to bottom-right matches currentPlayer",
-				"Return true if top-right to bottom-left matches currentPlayer",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 12,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-013",
-			"title": "Consolidate Game Over Checks",
-			"description": "Combine win and draw conditions into a single master check.",
-			"acceptanceCriteria": [
-				"Implement isGameOver() in Game",
-				"Return true if horizontal, vertical, or diagonal win is true",
-				"Return true if board isFull()",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 13,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-014",
-			"title": "Create Input Handler",
-			"description": "Set up a class to handle reading from STDIN using Scanner.",
-			"acceptanceCriteria": [
-				"Create InputHandler.java",
-				"Initialize java.util.Scanner wrapping System.in",
-				"Implement a method to read a raw string line",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 14,
-			"passes": false,
-			"notes": "Isolating I/O makes testing the Game logic easier."
-		},
-		{
-			"id": "US-015",
-			"title": "Parse User Input",
-			"description": "Parse the string input into row and column integers.",
-			"acceptanceCriteria": [
-				"Expect input format like 'row col' or 'row,col'",
-				"Parse string to an integer array [row, col]",
-				"Handle NumberFormatException gracefully by prompting again",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 15,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-016",
-			"title": "Integrate Input with Move Validation",
-			"description": "Loop input requests until a valid move is provided.",
-			"acceptanceCriteria": [
-				"Implement getValidMove(Game game) in InputHandler",
-				"Prompt user for input",
-				"Use Game.isValidMove() to check the parsed coordinates",
-				"Keep prompting if move is invalid (taken or out of bounds)",
-				"Return the valid [row, col]",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 16,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-017",
-			"title": "Build the Main Game Loop",
-			"description": "Construct the sequence of events for a single match.",
-			"acceptanceCriteria": [
-				"Implement start() method in Game",
-				"Loop while !isGameOver()",
-				"Inside loop: print board, print whose turn it is, get valid move, apply move, switch player",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 17,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-018",
-			"title": "Handle End Game Output",
-			"description": "Announce the result (Win or Draw) when the game loop ends.",
-			"acceptanceCriteria": [
-				"Modify Game.start() loop exit",
-				"If a win condition was met, print 'Player X/O wins!'",
-				"If a draw condition was met, print 'It's a draw!'",
-				"Print the final board state",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 18,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-019",
-			"title": "Implement Main Entry Point",
-			"description": "Create the executable Main class to launch the app.",
-			"acceptanceCriteria": [
-				"Create Main.java",
-				"Add public static void main(String[] args)",
-				"Instantiate Game and call start()",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 19,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-020",
-			"title": "Implement Play Again Feature",
-			"description": "Allow users to play another match without restarting the JVM.",
-			"acceptanceCriteria": [
-				"After a game ends, prompt 'Play again? (y/n)'",
-				"If 'y', reset the Board and currentPlayer, then start a new game loop",
-				"If 'n', exit program",
-				"Typecheck passes",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 20,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-021",
-			"title": "Write Unit Tests for Board Logic",
-			"description": "Ensure the core data structure is bulletproof.",
-			"acceptanceCriteria": [
-				"Add JUnit tests for Board.java",
-				"Test cell retrieval and updates",
-				"Test out of bounds exceptions",
-				"Test isFull logic",
-				"Tests pass",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 21,
-			"passes": false,
-			"notes": ""
-		},
-		{
-			"id": "US-022",
-			"title": "Write Unit Tests for Game Logic",
-			"description": "Ensure win/draw detections trigger correctly.",
-			"acceptanceCriteria": [
-				"Add JUnit tests for Game.java",
-				"Mock or manually setup board states for horizontal, vertical, and diagonal wins",
-				"Assert that win checks return true",
-				"Tests pass",
-				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
-			],
-			"priority": 22,
-			"passes": false,
-			"notes": ""
-		}
-	]
+    "project": "TicTacToeCLI",
+    "branchName": "ralph/tic-tac-toe-cli",
+    "description": "Tic Tac Toe CLI Java Implementation broken down for atomic AI iterations",
+    "tddPolicy": "After each user story iteration, all test cases must pass and code compilation must succeed. Code must be written in a test-driven development (TDD) manner: tests are written first, and any code added must always pass all tests before marking the story as done.",
+    "userStories": [
+        // existing code...
+        {
+            "id": "US-004",
+            "title": "Implement Board Boundary Validation",
+            "description": "Ensure getCell and setCell handle out-of-bounds coordinates safely.",
+            "acceptanceCriteria": [
+                "Add an isValidCoordinate(row, col) helper method",
+                "Throw IllegalArgumentException for coordinates outside 0-2",
+                "Typecheck passes",
+                "All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
+            ],
+            "priority": 4,
+            "passes": true,
+            "notes": ""
+        },
+        {
+            "id": "US-005",
+            "title": "Implement Board isFull Check",
+            "description": "Add a method to check if the board has no empty spaces left, which is needed for draw detection.",
+            "acceptanceCriteria": [
+                "Implement isFull() method",
+                "Return false if no cells contain Player.EMPTY, else false",
+                "Typecheck passes",
+                "All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
+            ],
+            "priority": 5,
+            "passes": true,
+            "notes": ""
+        },
+        // existing code...
+    ]
 }

@@ -14,3 +14,4 @@ Implemented US-013: Implement Game Over Check
 Implemented US-014: Create Input Handler
 Implemented US-015: Parse User Input
 Implemented US-016: Integrate Input with Move Validation
+Implemented US-017: Build the Main Game Loop

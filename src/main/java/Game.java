@@ -38,4 +38,32 @@ public class Game {
         }
         return getBoard().getCell(row, col) == Player.EMPTY;
     }
+
+    public void start() {
+        while (!isGameOver()) {
+            System.out.println("Current Board:");
+            printBoard();
+            System.out.println("Player " + getCurrentPlayer() + "'s turn");
+            int[] move = new InputHandler().getValidMove(this);
+            getBoard().setCell(move[0], move[1], getCurrentPlayer());
+            switchPlayer();
+        }
+    }
+
+    private void switchPlayer() {
+        if (getCurrentPlayer() == Player.X) {
+            currentPlayer = Player.O;
+        } else {
+            currentPlayer = Player.X;
+        }
+    }
+
+    private void printBoard() {
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                System.out.print(getBoard().getCell(row, col) + " ");
+            }
+            System.out.println();
+        }
+    }
 }

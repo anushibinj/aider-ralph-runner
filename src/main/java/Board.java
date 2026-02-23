@@ -61,4 +61,13 @@ public class Board {
         return (this.cells[0][0] == player && this.cells[1][1] == player && this.cells[2][2] == player) ||
                (this.cells[0][2] == player && this.cells[1][1] == player && this.cells[2][0] == player);
     }
+
+    public void printBoard() {
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                System.out.print(getCell(row, col) + " ");
+            }
+            System.out.println();
+        }
+    }
 }

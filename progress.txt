@@ -1,2 +1,4 @@
 ## US-001: Setup Project Structure and Enums
 Created a standard Java src folder structure and a Player enum with values X, O, and EMPTY.
+## US-002: Create Board Class
+Created Board.java with a 3x3 grid of Player enums, initialized with EMPTY.

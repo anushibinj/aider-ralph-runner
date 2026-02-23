@@ -27,4 +27,15 @@ public class Board {
     private boolean isValidCoordinate(int row, int col) {
         return row >= 0 && row < 3 && col >= 0 && col < 3;
     }
+
+    public boolean isFull() {
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                if (this.cells[row][col] == Player.EMPTY) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }

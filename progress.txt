@@ -2,3 +2,4 @@ Implemented US-001: Setup Project Structure and Enums
 Implemented US-002: Create Board Class
 Implemented US-003: Implement Board Getter and Setter
 Implemented US-004: Implement Board Boundary Validation
+Implemented US-005: Implement Board isFull Check

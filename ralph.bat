@@ -15,7 +15,7 @@ echo =====================================
 echo.
 echo -------- Iteration !COUNT! / %ITERATIONS% --------
 
-aider --model openai/llama-3.3-70b --no-restore-chat-history --edit-format whole --yes --auto-commits --dirty-commits --no-show-model-warnings --message-file ralph.prompt.md
+aider -v --model openai/llama-3.3-70b --editor-model ollama/deepseek-coder:6.7b --no-restore-chat-history --edit-format whole --yes --auto-commits --dirty-commits --no-show-model-warnings --message-file ralph.prompt.md
 
 REM increment counter
 set /a COUNT+=1

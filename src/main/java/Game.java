@@ -31,4 +31,11 @@ public class Game {
         
         return false;
     }
+
+    public boolean isValidMove(int row, int col) {
+        if (row < 0 || row >= 3 || col < 0 || col >= 3) {
+            return false;
+        }
+        return getBoard().getCell(row, col) == Player.EMPTY;
+    }
 }

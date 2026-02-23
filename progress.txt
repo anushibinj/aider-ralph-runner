@@ -11,3 +11,6 @@ Implemented US-010: Implement Horizontal Win Check
 Implemented US-011: Implement Vertical Win Check
 Implemented US-012: Implement Diagonal Win Check
 Implemented US-013: Implement Game Over Check
+Implemented US-014: Create Input Handler
+Implemented US-015: Parse User Input
+Implemented US-016: Integrate Input with Move Validation

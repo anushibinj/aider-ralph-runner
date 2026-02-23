@@ -23,5 +23,3 @@ Steps:
 <promise>COMPLETE</promise>
 
 10. Exit loop and end process.
-
-/exit

@@ -11,10 +11,20 @@ public class Board {
     }
 
     public Player getCell(int row, int col) {
+        if (!isValidCoordinate(row, col)) {
+            throw new IllegalArgumentException("Coordinates out of bounds");
+        }
         return this.cells[row][col];
     }
 
     public void setCell(int row, int col, Player player) {
+        if (!isValidCoordinate(row, col)) {
+            throw new IllegalArgumentException("Coordinates out of bounds");
+        }
         this.cells[row][col] = player;
+    }
+
+    private boolean isValidCoordinate(int row, int col) {
+        return row >= 0 && row < 3 && col >= 0 && col < 3;
     }
 }

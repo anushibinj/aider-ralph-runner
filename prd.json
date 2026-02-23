@@ -40,7 +40,7 @@
                 "Typecheck passes"
             ],
             "priority": 3,
-            "passes": false,
+            "passes": true,
             "notes": "Assumes zero-indexed coordinates (0-2)."
         },
         {
@@ -53,7 +53,7 @@
                 "Typecheck passes"
             ],
             "priority": 4,
-            "passes": false,
+            "passes": true,
             "notes": ""
         },
         {

@@ -15,3 +15,5 @@ Implemented US-014: Create Input Handler
 Implemented US-015: Parse User Input
 Implemented US-016: Integrate Input with Move Validation
 Implemented US-017: Build the Main Game Loop
+Implemented US-018: Handle End Game Output
+Implemented US-019: Implement Main Entry Point

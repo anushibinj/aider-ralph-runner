@@ -26,18 +26,18 @@ Here is the explanation of some of the important flags:
 ## Pre-requisites
 
 1. Aider CLI from https://github.com/Aider-AI/aider
-2. `prd.json` for your specific product requirement
+2. Access to an LLM that Aider supports - https://aider.chat/docs/llms.html
 
 ## How to run
 
 ### Copy necessary files to your workspace
 
-RALPH loop requires 3 files to run:
+RALPH loop requires 2 files to run:
 
 1. prd.json
 2. ralph.bat
 
-Generate the first one (more instructions in below section). Copy the second one from this repo.
+Generate the first one (more instructions in the below section). Copy the second one from this repo.
 
 ### Generate `prd.json`
 

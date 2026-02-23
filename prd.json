@@ -1,0 +1,28 @@
+{
+  "overview": "The Tic Tac Toe Java application is a command-line interface (CLI) based game that allows two players to play against each other.",
+  "functionalRequirements": [
+    "The game should display a 3x3 grid to the players.",
+    "The game should allow players to input their moves by specifying the row and column numbers.",
+    "The game should validate the player's input to ensure it is within the grid boundaries.",
+    "The game should update the grid after each move.",
+    "The game should check for a winner after each move.",
+    "The game should announce the winner or a draw if all squares are filled."
+  ],
+  "nonFunctionalRequirements": [
+    "The game should be implemented in Java.",
+    "The game should run on the command-line interface (CLI).",
+    "The game should be easy to use and understand."
+  ],
+  "userInterface": [
+    "The 3x3 grid",
+    "The current player's turn",
+    "The result of each move (valid or invalid)",
+    "The winner or a draw message"
+  ],
+  "userExperience": "The game will provide a simple and intuitive way for players to play Tic Tac Toe. The game will guide the players through each step, from inputting their moves to announcing the winner.",
+  "testing": {
+    "unitTesting": "Unit testing for individual components",
+    "integrationTesting": "Integration testing for the entire game",
+    "userAcceptanceTesting": "User acceptance testing to ensure the game is easy to use and understand"
+  }
+}

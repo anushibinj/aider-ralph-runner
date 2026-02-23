@@ -9,13 +9,12 @@ I have demonstrated this by asking continuously prompting Aider to write a Java 
 The main runner command (inside `ralph.bat`) will look like:
 
 ```bash
-aider -v --model openai/llama-3.3-70b --editor-model ollama/deepseek-coder:6.7b --no-restore-chat-history --edit-format whole --yes --auto-commits --dirty-commits --no-show-model-warnings --message-file ralph.prompt.md
+aider -v --model openai/llama-3.3-70b --no-restore-chat-history --edit-format whole --yes --auto-commits --dirty-commits --no-show-model-warnings --message-file ralph.prompt.md
 ```
 
 Here is the explanation of some of the important flags:
 
 - **--model openai/llama-3.3-70b**: Llama 3 model for code generation
-- **--editor-model ollama/deepseek-coder:6.7b**: Deepseek Coder model for editing operations like finding diff, etc. Note that you may remove this argument and let the main model do all of the work. I found that the speed was better this way.
 - **--no-restore-chat-history**: To start every iteration with fresh context
 - **--edit-format whole**: This was needed so that the model reads the whole code in every iteration instead of just a small diff. This was crucial because the model that I used kept hallucinating otherwise (because it didn't have enough code context)
 - **--yes**: To run in autonomous mode answering all questions as "Yes"
@@ -88,8 +87,6 @@ The main heart of the runner is the `ralph.bat` file. Before invoking it, make s
 ```bash
 setx OPENAI_API_BASE <endpoint>
 setx OPENAI_API_KEY <key>
-
-setx OLLAMA_API_BASE http://127.0.0.1:11434
 ```
 
 Note that you need to restart the shell after running the above commands.

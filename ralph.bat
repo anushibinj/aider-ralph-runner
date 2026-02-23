@@ -44,7 +44,7 @@ echo.
 echo Running Aider with prompt:
 echo %PROMPT%
 
-aider -v --model openai/llama-3.3-70b --editor-model ollama/deepseek-coder:6.7b --no-restore-chat-history --edit-format whole --yes --auto-commits --dirty-commits --no-show-model-warnings -m %PROMPT%
+aider -v --model openai/llama-3.3-70b --no-restore-chat-history --edit-format whole --yes --auto-commits --dirty-commits --no-show-model-warnings -m %PROMPT%
 
 REM increment counter
 set /a COUNT+=1

@@ -14,4 +14,21 @@ public class Game {
     public Player getCurrentPlayer() {
         return this.currentPlayer;
     }
+
+    public boolean isGameOver() {
+        Board board = getBoard();
+        Player currentPlayer = getCurrentPlayer();
+        
+        if (board.checkHorizontalWin(currentPlayer) || 
+            board.checkVerticalWin(currentPlayer) || 
+            board.checkDiagonalWin(currentPlayer)) {
+            return true;
+        }
+        
+        if (board.isFull()) {
+            return true;
+        }
+        
+        return false;
+    }
 }

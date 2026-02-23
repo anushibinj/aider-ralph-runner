@@ -82,7 +82,7 @@ Put the above file at the root of your workspace, alongside `ralph.bat`.
 
 ### Set the model details
 
-The main heart of the runner is the `ralph.bat` file. Before invoking it, make sure to set your custom model value in CMD. For me, I used an OpenAI-compatible model for reasoning and code generation. And the Deepseek-coder model for editing (finding diffs, etc). So, I used the following commands:
+The main heart of the runner is the `ralph.bat` file. Before invoking it, make sure to set your custom model value in CMD. For me, I used an OpenAI-compatible model for reasoning and code generation. So, I used the following commands:
 
 ```bash
 setx OPENAI_API_BASE <endpoint>

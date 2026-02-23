@@ -47,4 +47,18 @@ public class Board {
         }
         return false;
     }
+
+    public boolean checkVerticalWin(Player player) {
+        for (int col = 0; col < 3; col++) {
+            if (this.cells[0][col] == player && this.cells[1][col] == player && this.cells[2][col] == player) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkDiagonalWin(Player player) {
+        return (this.cells[0][0] == player && this.cells[1][1] == player && this.cells[2][2] == player) ||
+               (this.cells[0][2] == player && this.cells[1][1] == player && this.cells[2][0] == player);
+    }
 }

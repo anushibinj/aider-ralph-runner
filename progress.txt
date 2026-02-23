@@ -8,3 +8,5 @@ Implemented US-007: Create Game Class
 Implemented US-008: Implement Turn Switching
 Implemented US-009: Implement Move Validation
 Implemented US-010: Implement Horizontal Win Check
+Implemented US-011: Implement Vertical Win Check
+Implemented US-012: Implement Diagonal Win Check

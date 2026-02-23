@@ -2,3 +2,5 @@
 Created a standard Java src folder structure and a Player enum with values X, O, and EMPTY.
 ## US-002: Create Board Class
 Created Board.java with a 3x3 grid of Player enums, initialized with EMPTY.
+## US-003: Implement Board Getter and Setter
+Implemented getCell and setCell methods in Board.java.

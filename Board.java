@@ -9,4 +9,12 @@ public class Board {
             }
         }
     }
+
+    public Player getCell(int row, int col) {
+        return this.grid[row][col];
+    }
+
+    public void setCell(int row, int col, Player player) {
+        this.grid[row][col] = player;
+    }
 }

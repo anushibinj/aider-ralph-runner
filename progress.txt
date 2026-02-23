@@ -19,3 +19,4 @@ Implemented US-018: Handle End Game Output
 Implemented US-019: Implement Main Entry Point
 Implemented US-020: Implement Play Again Feature
 Implemented US-021: Write Unit Tests for Board Logic
+Implemented US-022: Write Unit Tests for Game Logic

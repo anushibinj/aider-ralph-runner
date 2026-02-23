@@ -1,0 +1,2 @@
+## US-001: Setup Project Structure and Enums
+Created a standard Java src folder structure and a Player enum with values X, O, and EMPTY.

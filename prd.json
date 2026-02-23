@@ -15,7 +15,7 @@
 				"All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
 			],
 			"priority": 1,
-			"passes": false,
+			"passes": true,
 			"notes": "Starting with fundamental types."
 		},
 		{

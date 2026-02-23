@@ -3,8 +3,6 @@
     "branchName": "ralph/tic-tac-toe-cli",
     "description": "Tic Tac Toe CLI Java Implementation broken down for atomic AI iterations",
     "userStories": [
-        // existing code...
-
         {
             "id": "US-012",
             "title": "Implement Diagonal Win Check",
@@ -19,7 +17,18 @@
             "passes": true,
             "notes": ""
         },
-
-        // existing code...
+        {
+            "id": "US-013",
+            "title": "Implement Game Over Check",
+            "description": "Check if the game is over due to a win or a draw.",
+            "acceptanceCriteria": [
+                "Implement isGameOver()",
+                "Return true if the game is over",
+                "Typecheck passes"
+            ],
+            "priority": 13,
+            "passes": false,
+            "notes": ""
+        }
     ]
 }

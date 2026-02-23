@@ -1,6 +1,30 @@
 @echo off
 setlocal enabledelayedexpansion
 
+REM ===== CHECK FOR prd.json =====
+if not exist "prd.json" (
+    echo ERROR: prd.json not found!
+    echo "prd.json (Product Requirement Document) is necessary to run the RALPH loop. Please generate one with the following syntax and place it next to ralph.bat:"
+    echo.
+    echo {
+    echo     "project": "TicTacToeCLI",
+    echo     "branchName": "ralph/tic-tac-toe-cli",
+    echo     "description": "Tic Tac Toe CLI Java Implementation broken down for atomic AI iterations",
+    echo     "userStories": [
+    echo         {
+    echo             "id": "US-001",
+    echo             "title": "Setup Project Structure and Enums",
+    echo             "description": "Setup Project Structure and Enums",
+    echo             "acceptanceCriteria": ["Setup Project Structure and Enums"],
+    echo             "priority": 1,
+    echo             "passes": true,
+    echo             "notes": ""
+    echo         }
+    echo     ]
+    echo }
+    exit /b 1
+)
+
 REM ===== CONFIG =====
 set ITERATIONS=20
 set COUNT=1

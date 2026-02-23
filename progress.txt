@@ -1,1 +1,2 @@
 Implemented US-001: Setup Project Structure and Enums
+Implemented US-002: Create Board Class

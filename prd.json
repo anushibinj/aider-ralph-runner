@@ -4,7 +4,48 @@
     "description": "Tic Tac Toe CLI Java Implementation broken down for atomic AI iterations",
     "tddPolicy": "After each user story iteration, all test cases must pass and code compilation must succeed. Code must be written in a test-driven development (TDD) manner: tests are written first, and any code added must always pass all tests before marking the story as done.",
     "userStories": [
-        // existing code...
+        {
+            "id": "US-001",
+            "title": "Setup Project Structure and Enums",
+            "description": "Create a standard Java src folder structure and a Player enum with values X, O, and EMPTY.",
+            "acceptanceCriteria": [
+                "Create a standard Java src folder structure",
+                "Create a Player enum with values X, O, and EMPTY",
+                "Typecheck passes",
+                "All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
+            ],
+            "priority": 1,
+            "passes": true,
+            "notes": ""
+        },
+        {
+            "id": "US-002",
+            "title": "Create Board Class",
+            "description": "Create Board.java with a 3x3 grid of Player enums, initialized with EMPTY.",
+            "acceptanceCriteria": [
+                "Create Board.java with a 3x3 grid of Player enums",
+                "Initialize the grid with EMPTY",
+                "Typecheck passes",
+                "All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
+            ],
+            "priority": 2,
+            "passes": true,
+            "notes": ""
+        },
+        {
+            "id": "US-003",
+            "title": "Implement Board Getter and Setter",
+            "description": "Implement getCell and setCell methods in Board.java.",
+            "acceptanceCriteria": [
+                "Implement getCell method",
+                "Implement setCell method",
+                "Typecheck passes",
+                "All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
+            ],
+            "priority": 3,
+            "passes": true,
+            "notes": ""
+        },
         {
             "id": "US-004",
             "title": "Implement Board Boundary Validation",
@@ -25,14 +66,13 @@
             "description": "Add a method to check if the board has no empty spaces left, which is needed for draw detection.",
             "acceptanceCriteria": [
                 "Implement isFull() method",
-                "Return false if no cells contain Player.EMPTY, else false",
+                "Return false if any cells contain Player.EMPTY, else true",
                 "Typecheck passes",
                 "All test cases must pass and code compilation must succeed after this iteration (TDD: tests first, code must always pass tests before marking as done)"
             ],
             "priority": 5,
             "passes": true,
             "notes": ""
-        },
-        // existing code...
+        }
     ]
 }

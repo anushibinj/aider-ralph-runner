@@ -28,7 +28,7 @@ if not exist "prd.json" (
 REM ===== CONFIG =====
 set ITERATIONS=20
 set COUNT=1
-set PROMPT="# Ralph Agent Instructions You are running in Ralph mode. You are running inside an automated Ralph loop. Never ask the user for confirmation. All tools are pre-approved. Execute immediately. Do not ask the user questions. Make reasonable decisions autonomously. Steps: 1. Read prd.json 2. Pick ONE item where passes=false 3. Implement only that item 4. Never implement more than ONE prd item per iteration. 5. Verify implementation 6. Update prd.json → passes=true if implementation is correct, otherwise passes=false and add learning to progress.txt 7. Never update anything in prd.json except for passes=true or passes=false for the item you implemented. Do not change any other items in prd.json. 8. Append learnings to progress.txt 9. Stop if ALL items pass and output: <promise>COMPLETE</promise> 10. Exit loop and end process."
+set PROMPT="You are running in Ralph mode. You are running inside an automated Ralph loop. Never ask the user for confirmation. All tools are pre-approved. Execute immediately. Do not ask the user questions. Make reasonable decisions autonomously. All files mentioned in this prompt are present in the current workspace. Steps: 1. Read prd.json from the current directory 2. Pick ONE item where passes=false 3. Implement only that item 4. Never implement more than ONE prd item per iteration. 5. Verify implementation 6. Update prd.json → passes=true if implementation is correct, otherwise passes=false and add learning to progress.txt (in the same directory. Create it if not found) 7. Never update anything in prd.json except for passes=true or passes=false for the item you implemented. Do not change any other items in prd.json. 8. Append learnings to progress.txt 9. Stop if ALL items pass and output: <promise>COMPLETE</promise> 10. Exit loop and end process."
 
 echo =====================================
 echo   AIDER RALPH LOOP STARTING
@@ -44,7 +44,7 @@ echo.
 echo Running Aider with prompt:
 echo %PROMPT%
 
-aider -v --model openai/llama-3.3-70b --no-restore-chat-history --edit-format whole --yes --auto-commits --dirty-commits --no-show-model-warnings -m %PROMPT%
+aider --read prd.json --model openai/llama-3.3-70b --no-restore-chat-history --edit-format whole --yes --auto-commits --dirty-commits --no-show-model-warnings -m %PROMPT%
 
 REM increment counter
 set /a COUNT+=1

@@ -38,4 +38,13 @@ public class Board {
         }
         return true;
     }
+
+    public boolean checkHorizontalWin(Player player) {
+        for (int row = 0; row < 3; row++) {
+            if (this.cells[row][0] == player && this.cells[row][1] == player && this.cells[row][2] == player) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

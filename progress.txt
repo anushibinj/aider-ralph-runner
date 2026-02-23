@@ -5,3 +5,6 @@ Implemented US-004: Implement Board Boundary Validation
 Implemented US-005: Implement Board isFull Check
 Implemented US-006: Implement Board Rendering
 Implemented US-007: Create Game Class
+Implemented US-008: Implement Turn Switching
+Implemented US-009: Implement Move Validation
+Implemented US-010: Implement Horizontal Win Check
